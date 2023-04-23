@@ -1,0 +1,16 @@
+# ESTE CÓDIGO ESTÁ EM PYTHON
+while True: #LOOP
+# PARTE 1: LEVANTAMENTO DE DADOS
+ ham = float(input("Quantos hambúrgueres você consumiu? "))
+ che = float(input("Quantos cheesebúrgueres você consumiu? "))
+ fri = float(input("Quantas porções de fritas você consumiu? "))
+ ref = float(input("Quantos refrigerantes você consumiu? "))
+ mil = float(input("Quantos milkshakes você consumiu? "))
+# PARTE 2: CÁLCULO DA CONTA FINAL
+ con = ham*3 + che*2.5 + fri*2.5 + ref*1 + mil*3
+ print("O valor da conta é", con, "reais.")
+ # PARTE 3: REINICIAR 
+ refazer = input('Deseja refazer a conta? Digite "sim" ou "não": ')
+ if refazer == "não":
+    print("Obrigada pela preferência, volte sempre.")
+    break
