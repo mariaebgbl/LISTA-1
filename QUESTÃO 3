@@ -1,0 +1,40 @@
+import math
+
+qnt = 0 # QUANTIDADE DE CONTAS REALIZADAS
+inv = 0 # RELATÓRIO DE "a"s INVÁLIDOS
+
+while True:
+# COLETANDO DADOS
+    a = float(input('Digite o valor de "a": '))
+    if a == 0:
+        print("Valor inválido.")
+        inv += 1 #CONTABILIZAÇÃO DE VALORES INVÁLIDOS
+        continue
+    b = float(input('Digite o valor de "b": '))
+    c = float(input('Digite o valor de "c": '))
+# CALCULANDO DELTA E INFORMANDO RAÍZES
+    delta = b**2 - 4*a*c
+    if delta < 0:
+        print("A equação não possui raízes reais.")
+    elif delta == 0:
+        x = -b/(2*a)
+        print("A raiz da equação é", x)
+    else:
+        x1 = (-b + math.sqrt(delta))/(2*a)
+        x2 = (-b - math.sqrt(delta))/(2*a)
+        print("A equação possui duas raízes reais:", x1, "e", x2)
+    qnt += 1 # CONTABILIZAÇÃO DE REPETIÇÕES
+
+    refazer = input('Gostaria de calcular raízes reais de outra equação? Digite "sim" ou "não": ')
+    if refazer == "sim":
+        continue
+    if refazer == "não":
+        break
+# CONTABILIZAÇÃO TOTAL
+print("Você calculou a raiz de", qnt, "equações.")
+if inv == 0:
+   print('Todos os valores de "a" digitados foram válidos.')
+elif inv == 1:
+   print('Você digitou valores inválidos de "a" uma única vez.')
+else:
+   print('Você digitou valores inválidos de "a"', inv, "vezes.")
